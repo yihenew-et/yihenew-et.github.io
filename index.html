@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Project</title>
+    <!-- Cute Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF5F5; /* Soft pastel pink/cream */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(254, 180, 180, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .gif-container img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #FF7B93; /* Soft Rose */
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            min-height: 60px;
+            align-items: center;
+        }
+
+        .btn {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #FF7B93;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 123, 147, 0.4);
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.08);
+            background-color: #ff627e;
+        }
+
+        #noBtn {
+            background-color: #E2E8F0;
+            color: #64748B;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- You can replace this with a cute GIF link -->
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3BwNWh2Ym90bXN6cXd4Y3R0ODlyNDg1YW9icm95dTZnd3F5ZzZpNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/c946f0pC9uS37XgQ06/giphy.gif" alt="Cute heart animation">
+        </div>
+
+        <h1>Hey there...</h1>
+        
+        <p>
+            Over the last 8 months, talking and flirting with you has easily become my favorite part of every day. I’ve developed real, deep feelings for you, and I love you as more than just a friend. 
+            <br><br>
+            I'd love to take you out on a real date. What do you say?
+        </p>
+
+        <div class="btn-group">
+            <button class="btn" id="yesBtn" onclick="selectOption('Yes!')">Absolutely!</button>
+            <button class="btn" id="noBtn" onmouseover="moveNoButton()">Nope</button>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(choice) {
+            // Send the response to your backend/webhook here
+            alert("The server has processed your request! 🥰 I'll text you the details!");
+            // Or redirect to a cute success page: window.location.href = "success.html";
+        }
+
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Generate random movement within a reasonable range so it stays on screen but avoids the cursor
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100) - (window.innerWidth / 2 - 150);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100) - (window.innerHeight / 2 - 150);
+            
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
